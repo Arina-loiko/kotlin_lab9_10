@@ -18,9 +18,14 @@ fun main() {
     println("\ntask1 == task2: ${task1 == task2}")
     println("task1 == task3: ${task1 == task3}")
     println("task1.hashCode() == task2.hashCode(): ${task1.hashCode() == task2.hashCode()}")
-
     println("\ntask1: $task1")
 
     val task1Copy = task1.copy(priority = Priority.LOW)
     println("task1 copy with LOW priority: $task1Copy")
+
+    val devDept = DevelopmentDepartment()
+    val testDept = TestingDepartment()
+
+    devDept.printDepartmentGoal()
+    testDept.printDepartmentGoal()
 }
