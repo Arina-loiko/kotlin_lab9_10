@@ -1,14 +1,15 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-fun main() {
-    val name = "Kotlin"
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    println("Hello, " + name + "!")
+import resources.OutpostResource
+import resources.ResourceManager
 
-    for (i in 1..5) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        println("i = $i")
-    }
+fun main() {
+    val manager = ResourceManager()
+    val minerals = OutpostResource(1, "Minerals", 100)
+    val gas = OutpostResource(2, "Gas", 50)
+
+    manager.add(minerals)
+    manager.add(gas)
+    manager.printAll()
+
+    val bonusMinerals = minerals.copy(amount = minerals.amount + 50)
+    println("With bonus: $bonusMinerals")
 }
