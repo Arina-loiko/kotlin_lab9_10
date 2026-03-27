@@ -5,7 +5,7 @@ class Employee(
     position: String,
     salary: Int,
     yearsOfExperience: Int
-) {
+) : ReportGenerator {
     var fullName: String = fullName
         private set
     var position: String = position
@@ -23,4 +23,17 @@ class Employee(
         set(value) {
             field = value.coerceIn(0, 50)
         }
+    var currentTask: Task? = null
+
+    fun assignTask(newTask: Task) {
+        if (currentTask != null && !currentTask!!.isCompleted) {
+            println("Employee is already busy with task [${currentTask!!.title}]")
+            return
+        }
+        currentTask = newTask
+    }
+
+    override fun generateReport(): String {
+        return "Employee report - Name: $fullName, Position: $position, Salary: $salary, Experience: $yearsOfExperience years"
+    }
 }

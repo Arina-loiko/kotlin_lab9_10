@@ -28,4 +28,17 @@ fun main() {
 
     devDept.printDepartmentGoal()
     testDept.printDepartmentGoal()
+
+    println("\n--- Polymorphism with ReportGenerator ---")
+    val reports: List<ReportGenerator> = listOf(emp, devDept)
+    reports.forEach { println(it.generateReport()) }
+
+    println("\n--- Task assignment (Task 6) ---")
+    emp.assignTask(task1)
+    println("Current task: ${emp.currentTask?.title}")
+    emp.assignTask(task3)
+
+    println("\n--- Full report ---")
+    println(emp.generateReport())
+    devDept.printDepartmentGoal()
 }
