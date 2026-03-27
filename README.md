@@ -29,9 +29,17 @@ src/
 │   ├── OutpostModule.kt       - абстрактный класс модуля
 │   ├── EnergyGenerator.kt     - генератор энергии
 │   └── ResearchLab.kt         - исследовательская лаборатория
-└── resources/
-    ├── OutpostResource.kt     - data class ресурса
-    └── ResourceManager.kt     - менеджер ресурсов
+├── resources/
+│   ├── OutpostResource.kt     - data class ресурса
+│   └── ResourceManager.kt     - менеджер ресурсов
+└── employeetracker/
+    ├── Employee.kt            - сотрудник с инкапсуляцией и ReportGenerator
+    ├── Task.kt                - data class задачи с enum Priority
+    ├── Department.kt          - абстрактный класс отдела
+    ├── DevelopmentDepartment.kt - отдел разработки
+    ├── TestingDepartment.kt   - отдел тестирования
+    ├── ReportGenerator.kt     - интерфейс генератора отчётов
+    └── EmployeeMain.kt        - точка входа для самостоятельных заданий
 ```
 
 ## Пример - интерфейсы
